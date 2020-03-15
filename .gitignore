@@ -1,0 +1,32 @@
+### PyCharm+all Patch ###
+# Ignores the whole .idea folder and all .iml files
+# See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
+
+.idea/
+
+# Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
+
+*.iml
+modules.xml
+.idea/misc.xml
+*.ipr
+
+# Sonarlint plugin
+.idea/sonarlint
+
+### venv ###
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+.Python
+pyvenv.cfg
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-selfcheck.json
+
+__pycache__/
+# End of https://www.gitignore.io/api/venv,pycharm+all
