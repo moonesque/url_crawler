@@ -12,7 +12,7 @@ start_url = 'https://www.zoomit.ir/'
 allowed_domains = ['zoomit.ir']
 
 # Regex for URLs to keep
-regex_url = re.compile('https://' + '.*' + allowed_domains[0] + '.*')
+regex_url = re.compile('https://' + '.*' + allowed_domains[0] + '.*' + '/')
 
 # Max depth for links
 max_depth = 2

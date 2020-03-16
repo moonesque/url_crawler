@@ -25,6 +25,7 @@ class Crawler:
         """
         self.http_session = http_session
         self.start_response = start_response
+        self.request_count = 1
 
     def get_urls(self):
         # Set to hold all URLs on the website
@@ -54,6 +55,7 @@ class Crawler:
             # Get all URLs from the page
             try:
                 new_urls = self.http_session.get(current, allow_redirects=True, timeout=30).html.absolute_links
+                self.request_count += 1
             except TimeoutError as e:
                 logging.error(e)
                 continue
@@ -67,5 +69,6 @@ class Crawler:
                         urls[link] = depth + 1
                         to_visit.append(link)
 
-        logging.info('Crawled %s links.', len(urls))
+        logging.info('Crawled {} links.'.format(len(urls)))
         logging.info(urls)
+        logging.debug('Made {} HTTP requests.'.format(self.request_count))
