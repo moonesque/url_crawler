@@ -11,8 +11,11 @@ start_url = 'https://www.zoomit.ir/'
 # Allowed domains
 allowed_domains = ['zoomit.ir']
 
-# Regex - URLs to keep
-regex_url = re.compile('https://.*zoomit.ir.*')
+# Regex for URLs to keep
+regex_url = re.compile('https://' + '.*' + allowed_domains[0] + '.*')
+
+# Max depth for links
+max_depth = 2
 
 # HTTP request headers
 request_headers = {
@@ -23,4 +26,3 @@ request_headers = {
     'Accept-Encoding': 'gzip, deflate, br',
     'Connection': 'keep-alive'
 }
-
