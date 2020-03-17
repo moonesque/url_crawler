@@ -9,19 +9,15 @@ if __name__ == '__main__':
     # Set time
     start = time.time()
 
-    # Set logging level
-    logging.basicConfig(level=config.log_level)
+    # Set logger
+    logger = logging.getLogger(__name__)
 
-    logging.info('Connecting to site...')
-    agent = crawler.Agent()
-    session, response = agent.get_session()
-
-    logging.info('Running Crawler...')
-    crawl = crawler.Crawler(session, response)
+    logger.info('Running Crawler...')
+    crawl = crawler.Crawler()
     crawl.get_urls()
 
     finish = time.time()
-    logging.debug('Execution time: {}'.format(finish - start))
+    logger.debug('Execution time: {}'.format(finish - start))
 
 
 

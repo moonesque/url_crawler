@@ -1,9 +1,15 @@
 import logging
 import re
 
-
-# Logger level
+# Logger config
 log_level = logging.DEBUG
+log_fhandler = logging.FileHandler('url_crawler.log')
+log_fhandler.setLevel(log_level)
+log_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+log_fhandler.setFormatter(log_formatter)
+
+root_log = logging.getLogger()
+root_log.addHandler(log_fhandler)
 
 # Starting point URL
 start_url = 'https://www.zoomit.ir/'
