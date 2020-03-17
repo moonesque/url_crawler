@@ -11,6 +11,7 @@ if __name__ == '__main__':
 
     # Set logger
     logger = logging.getLogger(__name__)
+    logger.setLevel(config.log_level)
 
     logger.info('Running Crawler...')
     crawl = crawler.Crawler()

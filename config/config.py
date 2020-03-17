@@ -3,9 +3,10 @@ import re
 
 # Logger config
 log_level = logging.DEBUG
+# logging.basicConfig(level=log_level)
 log_fhandler = logging.FileHandler('url_crawler.log')
 log_fhandler.setLevel(log_level)
-log_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+log_formatter = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
 log_fhandler.setFormatter(log_formatter)
 
 root_log = logging.getLogger()
