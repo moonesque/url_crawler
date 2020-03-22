@@ -62,6 +62,8 @@ class Crawler:
                         urls[link] = depth + 1
                         to_visit.append(link)
 
+        self.http_session.close()
+
         logger.info("Crawled {} links.".format(len(urls)))
         logger.info(urls)
         logger.debug("Made {} HTTP requests.".format(self.request_count))
