@@ -3,13 +3,14 @@ import re
 
 # Logger config
 log_level = logging.DEBUG
-# logging.basicConfig(level=log_level)
 log_fhandler = logging.FileHandler("url_crawler.log")
 log_fhandler.setLevel(log_level)
 log_formatter = logging.Formatter(
     "%(asctime)s : %(levelname)s : %(name)s : %(message)s"
 )
 log_fhandler.setFormatter(log_formatter)
+log_shandler = logging.StreamHandler()
+log_shandler.setLevel(logging.WARNING)
 
 root_log = logging.getLogger()
 root_log.addHandler(log_fhandler)
@@ -35,3 +36,7 @@ request_headers = {
     "Accept-Encoding": "gzip, deflate, br",
     "Connection": "keep-alive",
 }
+
+# Celery broker - Redis
+BROKER_URL = "redis://localhost:6379"
+
