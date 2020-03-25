@@ -1,2 +1,2 @@
 # URL Crawler
-This this projects scrapes all URLs from a website.
+This projects crawls all URLs found on a website.
