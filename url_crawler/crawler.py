@@ -10,7 +10,7 @@ logger.setLevel(config.log_level)
 
 
 @celery_app.task
-def url_crawler():
+def url_crawler(url):
     """
         Crawls.
     """
@@ -19,7 +19,7 @@ def url_crawler():
 
     http_session = requests_html.HTMLSession()
     logger.debug("Sending GET request to start_url...")
-    start_response = http_session.get(url=config.start_url)
+    start_response = http_session.get(url=url)
     logger.debug("Received %s response.", start_response.status_code)
 
     request_count = 1

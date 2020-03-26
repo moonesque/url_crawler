@@ -22,8 +22,11 @@ start_url = "https://www.zoomit.ir/"
 allowed_domains = ["zoomit.ir"]
 
 # Regex for URLs to keep
-regex_url = re.compile("https://" + ".*" + allowed_domains[0] + ".*" + "/")
+regex_url = re.compile("http(s?)://" + ".*" + allowed_domains[0] + ".*/?")
 
+# Common URL regex
+# regex = re.compile(
+# "https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)")
 # Max depth for links
 max_depth = 2
 
@@ -39,4 +42,3 @@ request_headers = {
 
 # Celery broker - Redis
 BROKER_URL = "redis://localhost:6379"
-
