@@ -31,3 +31,7 @@ pip-selfcheck.json
 
 __pycache__/
 # End of https://www.gitignore.io/api/venv,pycharm+all
+
+instance/*
+!instance/.gitignore
+.webassets-cache
