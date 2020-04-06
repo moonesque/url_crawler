@@ -15,7 +15,7 @@ def crawler_endpoint():
             crawler.url_crawler.delay(url)
             return 'Running\n'
         else:
-            return 'Bad UEL:{}'.format(url)
+            return 'Bad URL:{}'.format(url)
 
 
 app.run()
